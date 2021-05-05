@@ -1,0 +1,63 @@
+.App {
+  text-align: center;
+  background-color: #0b4044;
+  color: #d1d1d1;
+}
+
+.avatar {
+  border-radius: 50%;
+  width: 20%;
+  border: 4px solid #d1d1d1;
+}
+
+.user-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-top: 1%;
+}
+
+.username {
+  margin-top: -.25%;
+}
+
+.user-text {
+  margin-top: -1.5%;
+  border: 1px solid #d1d1d1;
+  background-color: #072d30;
+  padding: .5%;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-top: -.1%;
+  margin-bottom: -.9%;
+}
+
+.follower-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1%;
+}
+
+.follower-img {
+  min-width: 80%;
+  height: 40vh;
+  border: 1px solid #d1d1d1;
+}
+
+.follower-name {
+  font-size: 1rem;
+  border: 2px solid #d1d1d1;
+  background-color: #072d30;
+}
+
+a {color:#d1d1d1; text-decoration: none;}         
+a:visited {color:#d1d1d1; text-decoration: none;} 
+a:hover {color:#d1d1d1; text-decoration: none;}   
+a:active {color:#d1d1d1; text-decoration: none;}  
