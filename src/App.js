@@ -5,18 +5,41 @@ import Followers from './Followers';
 
 class App extends React.Component {
   state = {
-    user: [],
+    user: {
+      avatar_url: '',
+      name: '',
+      login: '',
+      followers_url: '',
+      html_url: '',
+    },
+
+    followers: [],
   }
+
   componentDidMount() { //axios for User Card
     axios.get('https://api.github.com/users/RyderBlues')
          .then(res => {
             this.setState({
-              user:res.data
+              user: {
+                avatar_url: res.data.avatar_url,
+                name: res.data.name,
+                login: res.data.login,
+                followers_url: res.data.followers_url,
+                html_url: res.data.html_url,
+              }
             })
-            console.log(this.state);
+            axios.get(this.state.user.followers_url)
+            .then(res => {
+              this.setState({
+                followers: res.data
+              });
+            })
+            .catch(err => {
+              console.log('ERROR', err);
+            })
           })
          .catch(err => {
-            console.log(err);
+            console.log('ERROR', err);
           })
   };
   
@@ -31,7 +54,7 @@ class App extends React.Component {
             <div className='user-text'>{`@${this.state.user.login} on Github`}</div>
           </a>
         </div>
-        <Followers userData={this.state.user.followers_url} />
+        <Followers userData={this.state.followers} />
       </div>
     );
   }
